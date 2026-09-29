@@ -1,0 +1,2 @@
+const KEY='amara-daniel-rsvps';
+export async function submitRSVP(payload){await new Promise(r=>setTimeout(r,650));try{const current=JSON.parse(localStorage.getItem(KEY)||'[]');current.push({...payload,id:crypto.randomUUID?.()||String(Date.now()),submittedAt:new Date().toISOString()});localStorage.setItem(KEY,JSON.stringify(current));return {ok:true}}catch{throw new Error('We could not save your RSVP on this device. Please try again.')}}

@@ -1,0 +1,3 @@
+import { useCountdown } from '../hooks/useCountdown';
+import { weddingData as d } from '../data/weddingData';
+export default function Countdown(){const t=useCountdown(d.dateISO);if(!t.total)return <section className="countdown"><p className="eyebrow">The celebration</p><h2>Today is the day.</h2></section>;return <section className="countdown" aria-label="Countdown to the wedding"><p className="eyebrow">Until we say “I do”</p><div>{[['Days',t.days],['Hours',t.hours],['Minutes',t.minutes],['Seconds',t.seconds]].map(([label,n])=><span key={label}><strong>{String(n).padStart(2,'0')}</strong><small>{label}</small></span>)}</div></section>}

@@ -1,0 +1,2 @@
+import { useEffect, useState } from 'react';
+export function useCountdown(target){const calc=()=>{const d=Math.max(0,new Date(target).getTime()-Date.now());return {total:d,days:Math.floor(d/86400000),hours:Math.floor(d/3600000)%24,minutes:Math.floor(d/60000)%60,seconds:Math.floor(d/1000)%60}};const [time,setTime]=useState(calc);useEffect(()=>{setTime(calc());const id=setInterval(()=>setTime(calc()),1000);return()=>clearInterval(id)},[target]);return time}

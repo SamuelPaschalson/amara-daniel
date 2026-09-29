@@ -1,0 +1,2 @@
+import { weddingData as d } from '../data/weddingData';import AnimatedReveal from './AnimatedReveal';import {SectionHeading} from './UI';
+export default function Timeline(){return <section id="schedule" className="timeline section"><SectionHeading eyebrow="The day" title="From first arrival to last dance."/><div className="timeline-track">{d.schedule.map(([time,label],i)=><AnimatedReveal className="timeline-item" delay={i*70} key={time}><span>{String(i+1).padStart(2,'0')}</span><time>{time}</time><h3>{label}</h3></AnimatedReveal>)}</div></section>}

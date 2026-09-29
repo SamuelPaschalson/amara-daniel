@@ -1,0 +1,2 @@
+import { useEffect,useRef,useState } from 'react';
+export default function AnimatedReveal({children,className='',delay=0}){const ref=useRef(null),[shown,setShown]=useState(false);useEffect(()=>{const ob=new IntersectionObserver(([e])=>{if(e.isIntersecting){setShown(true);ob.disconnect()}},{threshold:.12});if(ref.current)ob.observe(ref.current);return()=>ob.disconnect()},[]);return <div ref={ref} className={`reveal ${shown?'is-visible':''} ${className}`} style={{'--delay':`${delay}ms`}}>{children}</div>}
