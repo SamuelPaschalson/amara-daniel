@@ -27,18 +27,24 @@ export default function EnvelopeIntro({ onOpen, onStart }) {
       <div className="envelope-intro__veil" />
 
       <header className="envelope-intro__header">
-        <p className="envelope-script">You are cordially invited</p>
-        <p className="eyebrow">{d.day} · {d.date}</p>
+        <p className="envelope-overline">The wedding celebration of</p>
+        <p className="envelope-script">
+          <span>{d.couple.partnerOne}</span>
+          <i>&</i>
+          <span>{d.couple.partnerTwo}</span>
+        </p>
+        <p className="eyebrow">{d.day} · {d.date} · {d.location}</p>
       </header>
 
       <button
         className="envelope-stage"
         type="button"
         onClick={openInvitation}
-        aria-label="Open Amara and Daniel's wedding invitation"
+        aria-label="Open Amanda and Nnanyelugo's wedding invitation"
         disabled={opening}
       >
         <span className="envelope-letter">
+          <span className="letter-florals" aria-hidden="true" />
           <span className="letter-ornament" aria-hidden="true">✦</span>
           <span className="eyebrow">Together with their families</span>
           <strong>{d.couple.partnerOne} <i>&</i> {d.couple.partnerTwo}</strong>
@@ -53,14 +59,15 @@ export default function EnvelopeIntro({ onOpen, onStart }) {
         <span className="envelope-flap">
           <span className="envelope-flap__paper" />
         </span>
+        <span className="envelope-florals" aria-hidden="true" />
         <span className="envelope-address">
           <strong>For our cherished guest</strong>
           <small>From {d.couple.partnerOne} & {d.couple.partnerTwo}</small>
         </span>
         <span className="wax-seal">
-          <span>A</span>
+          <span>{d.couple.partnerOne[0]}</span>
           <i>&</i>
-          <span>D</span>
+          <span>{d.couple.partnerTwo[0]}</span>
         </span>
       </button>
 

@@ -13,7 +13,7 @@ export default function App(){
   const location=useLocation();
   const {pathname}=location;
   const [entered,setEntered]=useState(()=>{
-    try{return sessionStorage.getItem('amara-daniel-invitation-opened')==='true'}catch{return false}
+    try{return sessionStorage.getItem('amanda-nnanyelugo-invitation-opened')==='true'}catch{return false}
   });
   const [playing,setPlaying]=useState(false);
   const [muted,setMuted]=useState(false);
@@ -26,7 +26,7 @@ export default function App(){
   },[]);
 
   const openInvitation=useCallback(()=>{
-    try{sessionStorage.setItem('amara-daniel-invitation-opened','true')}catch{}
+    try{sessionStorage.setItem('amanda-nnanyelugo-invitation-opened','true')}catch{}
     setEntered(true);
   },[]);
 

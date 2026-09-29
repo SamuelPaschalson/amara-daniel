@@ -1,4 +1,4 @@
-# Amara & Daniel — Wedding Website
+# Amanda & Nnanyelugo — Wedding Website
 
 A production-ready editorial wedding website built with React, Vite, React Router, and modern CSS. It includes responsive navigation, live countdown, animated story and timeline, image gallery with keyboard-accessible lightbox, travel guidance, FAQ, RSVP flow, local guestbook, optional music, and custom error handling.
 
