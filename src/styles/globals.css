@@ -147,12 +147,32 @@ footer{background:#211a16;color:#eee5da;padding:5rem var(--gutter) 2rem;display:
 .epilogue-line{margin:0}
 .story-closing-note{margin:1.4rem 0 0;padding-top:1.2rem;border-top:1px dashed rgba(199,163,106,.5);font-family:var(--display);font-size:1.35rem;font-weight:500;color:var(--burgundy);letter-spacing:.02em}
 .story-image {
-  overflow: hidden !important;
+  position: relative;
+  overflow: visible !important;
   max-width: 100% !important;
+}
+.story-image img {
   border-radius: 4px;
 }
-.story-watermark{position:absolute;bottom:-2.2rem;right:0;font-family:var(--display);font-size:clamp(4.5rem,10vw,8.5rem);color:var(--rose-gold);line-height:1;pointer-events:none;opacity:.7;max-width:100%!important;overflow:hidden!important}
-.story-row--reverse .story-watermark{left:0;right:auto}
+.story-watermark {
+  position: absolute;
+  bottom: -2.4rem;
+  right: -.8rem;
+  font-family: var(--display);
+  font-size: clamp(4.8rem, 11vw, 9.5rem);
+  color: var(--rose-gold);
+  line-height: 1;
+  pointer-events: none;
+  opacity: .75;
+  white-space: nowrap;
+  z-index: 2;
+  overflow: visible !important;
+  max-width: none !important;
+}
+.story-row--reverse .story-watermark {
+  left: -.8rem;
+  right: auto;
+}
 @media(max-width:900px){
   .story-row,.story-row--reverse{grid-template-columns:1fr;gap:3rem}
   .story-copy{max-width:none;margin-left:0!important;margin-right:0!important}
@@ -162,8 +182,18 @@ footer{background:#211a16;color:#eee5da;padding:5rem var(--gutter) 2rem;display:
 @media(max-width:640px){
   .story-copy{max-width:none;margin-left:0!important;margin-right:0!important}
   .story-row,.story-row--reverse{margin-bottom:0}
-  .story-watermark{font-size:clamp(3.5rem, 12vw, 4.8rem)!important;right:0;left:auto!important}
-  .story-row--reverse .story-watermark{left:auto!important;right:0}
+  .story-watermark{
+    font-size: clamp(4.2rem, 14vw, 5.8rem) !important;
+    bottom: -2.2rem !important;
+    right: -.6rem !important;
+    left: auto !important;
+    overflow: visible !important;
+    max-width: none !important;
+  }
+  .story-row--reverse .story-watermark{
+    left: auto !important;
+    right: -.6rem !important;
+  }
   .story-timeline-card{padding:1.1rem 1.2rem}
   .story-epilogue-card{padding:1.4rem 1.2rem}
 }

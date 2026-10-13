@@ -11,7 +11,7 @@ export const weddingData = {
   mapUrl: "https://www.google.com/maps/search/?api=1&query=St.%20Piran's%20Anglican%20Church%20Jos%20Nigeria",
   heroImage: img(1),
   featuredImage: img(2),
-  audioUrl: '/audio/ambient.mp3',
+  audioUrl: '/audio/Diana_Ross_Lionel_Richie_-_Endless_Love_art.net_(mp3.pm).mp3',
   nav: [
     ['Our Story', '/#story'],
     ['The Couple', '/#couple'],
