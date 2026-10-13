@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MusicPlayer from './components/MusicPlayer';
+import BackToTop from './components/BackToTop';
 import EnvelopeIntro from './components/EnvelopeIntro';
 import { weddingData as d } from './data/weddingData';
 const Home = lazy(() => import('./pages/Home'));
@@ -60,6 +61,7 @@ export default function App(){
         </Routes>
       </Suspense>
       <Footer/>
+      <BackToTop/>
       <MusicPlayer playing={playing} muted={muted} onToggle={toggleMusic} onMute={()=>{const next=!muted;setMuted(next);if(audioRef.current)audioRef.current.muted=next}}/>
     </div>
   </>

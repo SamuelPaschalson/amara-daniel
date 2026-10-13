@@ -1,2 +1,69 @@
-import {weddingData as d} from '../data/weddingData';import AnimatedReveal from './AnimatedReveal';import {Button,SectionHeading} from './UI';
-export default function Travel(){return <section id="travel" className="travel section"><SectionHeading eyebrow="Travel & stay" title="Meet us in Jos." body="Jos is served by Yakubu Gowon Airport, with additional connections available through Abuja. Please allow extra travel time and arrange transfers in advance."/><div className="travel-note"><p className="eyebrow">Getting there</p><p>Pre-booked airport transfers are the easiest option. Taxis and ride-hailing services operate throughout the city. Complimentary parking will be available at the ceremony and reception venues.</p></div><h3 className="travel-subtitle">Where to stay</h3><div className="hotel-grid">{d.hotels.map((h,i)=><AnimatedReveal className="hotel" key={h.name} delay={i*100}><span className="hotel-no">0{i+1}</span><p className="eyebrow">{h.area}</p><h3>{h.name}</h3><p>{h.text}</p><div><span aria-label={`${h.price.length} price level`}>{h.price}</span><Button href={h.url} target="_blank" rel="noreferrer" variant="text">Explore</Button></div></AnimatedReveal>)}</div><div className="transport"><h3>On the day</h3>{[['Airport transfers','Reserve ahead through your hotel concierge.'],['Taxis & ride-hailing','Ride-hailing availability can vary in Jos, so pre-booking is recommended.'],['Parking','Complimentary attended parking is available on-site.']].map(x=><div key={x[0]}><strong>{x[0]}</strong><p>{x[1]}</p></div>)}</div></section>}
+import { weddingData as d } from '../data/weddingData';
+import AnimatedReveal from './AnimatedReveal';
+import { Button, SectionHeading } from './UI';
+
+export default function Travel() {
+  return (
+    <section id="travel" className="travel section">
+      <AnimatedReveal direction="down">
+        <SectionHeading
+          eyebrow="Travel & stay"
+          title="Meet us in Jos."
+          body="Jos is served by Yakubu Gowon Airport, with additional connections available through Abuja. Please allow extra travel time and arrange transfers in advance."
+        />
+      </AnimatedReveal>
+
+      <AnimatedReveal direction="left" delay={80}>
+        <div className="travel-note">
+          <p className="eyebrow">Getting there</p>
+          <p>
+            Pre-booked airport transfers are the easiest option. Taxis and ride-hailing services operate
+            throughout the city. Complimentary parking will be available at the ceremony and reception
+            venues.
+          </p>
+        </div>
+      </AnimatedReveal>
+
+      <AnimatedReveal direction="up" delay={120}>
+        <h3 className="travel-subtitle">Where to stay</h3>
+      </AnimatedReveal>
+
+      <div className="hotel-grid">
+        {d.hotels.map((h, i) => {
+          const dir = i === 0 ? 'left' : i === 1 ? 'up' : 'right';
+          return (
+            <AnimatedReveal className="hotel" key={h.name} delay={i * 120} direction={dir}>
+              <span className="hotel-no">0{i + 1}</span>
+              <p className="eyebrow">{h.area}</p>
+              <h3>{h.name}</h3>
+              <p>{h.text}</p>
+              <div>
+                <span aria-label={`${h.price.length} price level`}>{h.price}</span>
+                <Button href={h.url} target="_blank" rel="noreferrer" variant="text">
+                  Explore
+                </Button>
+              </div>
+            </AnimatedReveal>
+          );
+        })}
+      </div>
+
+      <AnimatedReveal direction="up" delay={160}>
+        <div className="transport">
+          <h3>On the day</h3>
+          {[
+            ['Airport transfers', 'Reserve ahead through your hotel concierge.'],
+            ['Taxis & ride-hailing', 'Ride-hailing availability can vary in Jos, so pre-booking is recommended.'],
+            ['Parking', 'Complimentary attended parking is available on-site.'],
+          ].map(x => (
+            <div key={x[0]}>
+              <strong>{x[0]}</strong>
+              <p>{x[1]}</p>
+            </div>
+          ))}
+        </div>
+      </AnimatedReveal>
+    </section>
+  );
+}
+
