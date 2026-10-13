@@ -1,3 +1,4 @@
+import { Clock, MapPin } from 'lucide-react';
 import { weddingData as d } from '../data/weddingData';
 import AnimatedReveal from './AnimatedReveal';
 import { Button, SectionHeading } from './UI';
@@ -24,8 +25,14 @@ export default function WeddingDetails() {
           >
             <span>0{i + 1}</span>
             <h3>{e.title}</h3>
-            <p>{e.time}</p>
-            <p>{e.place}</p>
+            <p className="detail-meta">
+              <Clock size={13} className="detail-icon" aria-hidden="true" />
+              <span>{e.time}</span>
+            </p>
+            <p className="detail-meta">
+              <MapPin size={13} className="detail-icon" aria-hidden="true" />
+              <span>{e.place}</span>
+            </p>
           </AnimatedReveal>
         ))}
       </div>

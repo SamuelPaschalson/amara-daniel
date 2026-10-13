@@ -37,6 +37,7 @@ export default function Story() {
                   <ImageWithFallback
                     src={s.image}
                     alt={s.alt || `${s.title} — ${d.couple.partnerOne} and ${d.couple.partnerTwo}`}
+                    style={s.objectPosition ? { objectPosition: s.objectPosition } : undefined}
                   />
                   <span className="story-watermark" aria-hidden="true">{s.roman || s.num}</span>
                 </div>
@@ -73,7 +74,7 @@ export default function Story() {
                   {s.tags && (
                     <div className="story-tags" aria-label="What makes us, us">
                       {s.tags.map(tag => (
-                        <span key={tag} className="story-tag">✦ {tag}</span>
+                        <span key={tag} className="story-tag">{tag}</span>
                       ))}
                     </div>
                   )}

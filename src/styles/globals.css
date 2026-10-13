@@ -30,7 +30,7 @@ footer{background:#211a16;color:#eee5da;padding:5rem var(--gutter) 2rem;display:
 /* Invitation refresh: typography, envelope, day colors, image blending */
 .site-shell{transition:opacity .8s ease,filter .8s ease}.site-shell--waiting{height:100vh;overflow:hidden;opacity:0;filter:blur(10px);pointer-events:none}.site-shell--entered{animation:siteReveal 1.1s ease both}.button--dark{background:var(--burgundy)}.button--dark:hover{background:#5e172a}.button--light{color:var(--burgundy)}.section-heading h2{font-size:clamp(3.3rem,7vw,7rem);line-height:.88}.countdown{background:var(--burgundy)}
 .envelope-intro{position:fixed;inset:0;z-index:500;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;place-items:center;background:var(--burgundy);color:var(--ivory);padding:clamp(1.4rem,4vw,3rem);perspective:1500px;transition:opacity .8s ease .7s,visibility .8s ease .7s}.envelope-intro.is-opening{opacity:0;visibility:hidden}.envelope-portrait{position:absolute;inset:-5%;width:110%;height:110%;object-fit:cover;object-position:center 40%;opacity:.25;filter:saturate(.75) sepia(.18);mix-blend-mode:luminosity;mask-image:radial-gradient(ellipse at center,#000 0%,rgba(0,0,0,.72) 38%,transparent 76%)}.envelope-intro__veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(117,31,53,.35),var(--burgundy) 77%),linear-gradient(125deg,rgba(183,110,121,.24),transparent 50%)}.envelope-intro__header,.envelope-intro__footer{position:relative;z-index:2;text-align:center}.envelope-intro__header>p:last-child{font-family:var(--display);font-size:1.25rem;margin:.5rem 0}.envelope-stage{position:relative;z-index:3;width:min(580px,86vw);aspect-ratio:1.55/1;border:0;padding:0;background:transparent;perspective:1400px;filter:drop-shadow(0 30px 35px rgba(32,5,14,.42))}.envelope-shell{position:absolute;inset:15% 0 0;overflow:hidden;background:linear-gradient(145deg,#f7ead5,#e6cfa9);border:1px solid rgba(255,255,255,.5)}.envelope-lining{position:absolute;inset:0;background:linear-gradient(145deg,transparent 35%,rgba(183,110,121,.16)),radial-gradient(rgba(117,31,53,.07) .7px,transparent .8px);background-size:auto,7px 7px}.envelope-pocket{position:absolute;inset:0;background:linear-gradient(145deg,#f7ead5,#e8d3b0)}.envelope-pocket--left{clip-path:polygon(0 0,54% 100%,0 100%)}.envelope-pocket--right{clip-path:polygon(100% 0,46% 100%,100% 100%)}.envelope-pocket--front{clip-path:polygon(0 100%,50% 36%,100% 100%);filter:brightness(.98)}.envelope-flap{position:absolute;z-index:5;left:0;right:0;top:15%;height:56%;transform-origin:top center;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.68,-.08,.32,1.1)}.envelope-flap__paper{position:absolute;inset:0;background:linear-gradient(160deg,#f9eedc,#e0c59e);clip-path:polygon(0 0,50% 94%,100% 0);backface-visibility:hidden}.envelope-letter{position:absolute;z-index:2;left:6%;right:6%;bottom:5%;height:78%;background:linear-gradient(145deg,#fffaf1,#f3e8d4);color:var(--burgundy);display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(183,110,121,.55);transition:transform .85s cubic-bezier(.2,.8,.2,1) .45s}.envelope-letter:before{content:'';position:absolute;inset:8px;border:1px solid rgba(199,163,106,.55)}.envelope-letter strong{font-family:var(--display);font-size:clamp(2rem,6vw,4.2rem);font-weight:500;line-height:1;margin:.8rem 0}.envelope-letter strong i{color:var(--rose-gold);font-weight:400}.envelope-letter small{font-size:.6rem;text-transform:uppercase;letter-spacing:.18em}.wax-seal{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-3deg);width:82px;height:82px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#9d3b54,#611226 68%);border:4px double rgba(199,163,106,.8);box-shadow:0 8px 16px rgba(60,10,23,.36),inset 0 0 0 3px rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;gap:3px;color:var(--champagne);font-family:var(--display);font-size:1.2rem;transition:transform .45s ease,opacity .4s ease}.wax-seal i{font-size:.8rem}.envelope-stage:hover .wax-seal{transform:translate(-50%,-50%) rotate(2deg) scale(1.05)}.envelope-intro.is-opening .envelope-flap{transform:rotateX(178deg);z-index:1}.envelope-intro.is-opening .envelope-letter{transform:translateY(-52%)}.envelope-intro.is-opening .wax-seal{transform:translate(-50%,-50%) scale(.3) rotate(24deg);opacity:0}.envelope-intro__footer>p{text-transform:uppercase;letter-spacing:.2em;font-size:.62rem}.day-colors{display:flex;gap:.5rem;justify-content:center}.day-colors span{width:15px;height:15px;border-radius:50%;border:1px solid rgba(255,255,255,.4)}
-.invitation{position:relative;isolation:isolate;overflow:hidden}.invitation>div{position:relative;z-index:1}.invitation-wash{position:absolute;z-index:-1;right:-4%;bottom:-18%;width:54%;height:115%;object-fit:cover;opacity:.16;filter:saturate(.6) sepia(.2);mix-blend-mode:multiply;mask-image:radial-gradient(ellipse at center,#000 10%,transparent 72%)}.invitation h2{font-size:clamp(3.8rem,7.5vw,7.5rem);line-height:.86}.signature,.ornament{color:var(--rose-gold)}.story-image:after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 70px 25px var(--ivory);pointer-events:none;opacity:.34}.story-image img{mask-image:linear-gradient(to bottom,transparent 0,#000 8%,#000 91%,transparent 100%)}.story-image>span,.story-index{color:var(--rose-gold)}.story-copy h3{font-size:clamp(2.8rem,5vw,4.8rem);line-height:.92}.dress{background:var(--burgundy);position:relative;isolation:isolate;overflow:hidden}.dress:before{content:'';position:absolute;z-index:-1;inset:-10%;background:var(--dress-image) center 30%/cover;opacity:.2;filter:grayscale(.35) sepia(.15);mix-blend-mode:luminosity;mask-image:radial-gradient(ellipse at center,#000 10%,transparent 68%)}.dress:after{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(circle,transparent,var(--burgundy) 78%)}.dress h2 i{color:var(--champagne)}.dress>.reveal>p:not(.eyebrow){max-width:560px}.swatches>span{width:150px}.swatches i{border:1px solid rgba(255,255,255,.35)}.closing{background:var(--rose-gold)}.music{border:1px solid rgba(117,31,53,.14)}
+.invitation{position:relative;isolation:isolate;overflow:hidden}.invitation>div{position:relative;z-index:1}.invitation-wash{position:absolute;z-index:-1;right:-4%;bottom:-18%;width:54%;height:115%;object-fit:cover;opacity:.16;filter:saturate(.6) sepia(.2);mix-blend-mode:multiply;mask-image:radial-gradient(ellipse at center,#000 10%,transparent 72%)}.invitation h2{font-size:clamp(3.8rem,7.5vw,7.5rem);line-height:.86}.signature,.ornament{color:var(--rose-gold)}.story-image:after{display:none!important}.story-image img{object-position:center 30%;mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 88%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 88%,transparent 100%)}.story-image>span,.story-index{color:var(--rose-gold)}.story-copy h3{font-size:clamp(2.8rem,5vw,4.8rem);line-height:.92}.dress{background:var(--burgundy);position:relative;isolation:isolate;overflow:hidden}.dress:before{content:'';position:absolute;z-index:-1;inset:-10%;background:var(--dress-image) center 30%/cover;opacity:.2;filter:grayscale(.35) sepia(.15);mix-blend-mode:luminosity;mask-image:radial-gradient(ellipse at center,#000 10%,transparent 68%)}.dress:after{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(circle,transparent,var(--burgundy) 78%)}.dress h2 i{color:var(--champagne)}.dress>.reveal>p:not(.eyebrow){max-width:560px}.swatches>span{width:150px}.swatches i{border:1px solid rgba(255,255,255,.35)}.closing{background:var(--rose-gold)}.music{border:1px solid rgba(117,31,53,.14)}
 @keyframes siteReveal{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:none}}
 @media(max-width:640px){.envelope-intro{padding:1.2rem}.envelope-stage{width:94vw}.envelope-letter strong{font-size:2.25rem}.wax-seal{width:68px;height:68px}.envelope-intro__header>p:last-child{font-size:1.05rem}.invitation-wash{width:100%;right:-30%;opacity:.12}.swatches>span{width:100px}.section-heading h2{font-size:3.5rem}}
 @media(prefers-reduced-motion:reduce){.envelope-intro.is-opening{transition-delay:0s}.envelope-intro.is-opening .envelope-flap{transform:none}.envelope-intro.is-opening .envelope-letter{transform:none}}
@@ -90,7 +90,7 @@ footer{background:#211a16;color:#eee5da;padding:5rem var(--gutter) 2rem;display:
 @keyframes envPulse{0%,100%{opacity:1}50%{opacity:.5}}
 .site-shell{transition:opacity .65s ease;filter:none!important}.site-shell--waiting{filter:none!important}.site-shell--entered{animation:siteRevealOpacity .8s ease both!important}.envelope-intro{transition:opacity .7s ease 1.55s,visibility .7s ease 1.55s}
 @keyframes siteRevealOpacity{from{opacity:0}to{opacity:1}}
-@media(max-width:640px){.envelope-stage{width:min(440px,92vw);aspect-ratio:1.55/1}.envelope-florals{background-size:96% auto!important}.envelope-script{font-size:clamp(1.85rem,7.5vw,2.55rem)!important;gap:.35rem}.envelope-letter strong{font-size:clamp(1.75rem,5.5vw,2.15rem)}.envelope-letter{padding-top:clamp(1rem,4vw,1.6rem)}.envelope-address{bottom:8%!important}.envelope-address strong{font-size:1.2rem!important}.envelope-address small{font-size:.48rem!important}.wax-seal{width:60px!important;height:60px!important;font-size:1.02rem}.envelope-intro.is-opening .envelope-letter{transform:translateY(-58%)!important}.music{right:.75rem!important;bottom:.75rem!important}.music button{min-width:45px;height:45px!important}}
+@media(max-width:640px){.envelope-stage{width:min(390px,92vw);aspect-ratio:1.55/1}.envelope-florals{background-size:112% auto!important;background-position:50.8% top!important}.envelope-script{font-size:clamp(1.85rem,7.5vw,2.55rem)!important;gap:.35rem}.envelope-letter strong{font-size:clamp(1.75rem,5.5vw,2.15rem)}.envelope-letter{padding-top:clamp(1rem,4vw,1.6rem)}.envelope-address{bottom:8%!important}.envelope-address strong{font-size:1.2rem!important}.envelope-address small{font-size:.48rem!important}.wax-seal{width:60px!important;height:60px!important;font-size:1.02rem}.envelope-intro.is-opening .envelope-letter{transform:translateY(-58%)!important}.music{right:.75rem!important;bottom:.75rem!important}.music button{min-width:45px;height:45px!important}}
 @media(max-width:380px){.envelope-stage{width:94vw}.wax-seal{width:56px!important;height:56px!important;font-size:.95rem}}
 @media(max-height:650px){.envelope-intro{padding:.6rem .75rem}.envelope-stage{width:min(440px,75vh)}.envelope-script{font-size:2rem!important}.envelope-intro__header{margin-bottom:.35rem}.envelope-intro__footer{margin-top:.35rem}}
 
@@ -1616,6 +1616,506 @@ html {
   transition: width .12s ease-out;
   pointer-events: none;
 }
+
+/* ==========================================================================
+   MOBILE & RESPONSIVE PERFECTION SUITE
+   - Mobile Fullscreen Hamburger Menu with luxury dark gradient
+   - Hero Couple Text Scaling & Margin Protection (no edge-to-edge cutoff)
+   - Envelope Floral Ribbon Perfect Centering & Alignment to Flap & Seal
+   - Refined Lucide Icons & Micro-interactions
+   - General Mobile Responsiveness Everywhere
+   ========================================================================== */
+
+/* 1. Navbar & Mobile Menu Overlay */
+.navbar.is-menu-open {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+.navbar.is-menu-open .monogram {
+  color: #fff !important;
+  z-index: 360 !important;
+}
+
+.navbar.is-menu-open .menu-toggle span {
+  background: #fff !important;
+}
+
+.menu-toggle {
+  z-index: 360 !important;
+}
+
+.monogram {
+  z-index: 360 !important;
+}
+
+.mobile-menu {
+  display: flex !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  background-color: #210e14 !important;
+  background-image: radial-gradient(circle at 50% 20%, #3e121e 0%, #17050a 100%) !important;
+  color: var(--ivory) !important;
+  padding: 6.5rem var(--gutter) 2.5rem !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity .35s ease, visibility .35s ease !important;
+  z-index: 340 !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+}
+
+.mobile-menu.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.mobile-menu nav {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.8rem !important;
+}
+
+.mobile-menu nav > a:not(.button) {
+  font-family: var(--display) !important;
+  font-size: clamp(2rem, 7.5vw, 3.2rem) !important;
+  line-height: 1.25 !important;
+  color: #fff9f0 !important;
+  transition: transform .25s ease, color .25s ease !important;
+}
+
+.mobile-menu nav > a:not(.button):hover {
+  transform: translateX(6px) !important;
+  color: var(--champagne) !important;
+}
+
+.mobile-menu .button {
+  margin-top: 1.5rem !important;
+  width: 100% !important;
+  max-width: 320px !important;
+}
+
+.mobile-menu-footer p {
+  text-transform: uppercase !important;
+  letter-spacing: .16em !important;
+  font-size: .65rem !important;
+  color: rgba(245, 221, 191, .75) !important;
+  margin: 0 !important;
+}
+
+/* 2. Hero Couple Text Responsive Perfection */
+.hero-copy {
+  box-sizing: border-box !important;
+}
+
+.hero h1 {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-wrap: normal !important;
+}
+
+.hero h1 span.hero-name {
+  display: block !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 640px) {
+  .hero-copy {
+    padding: 5.5rem 1.25rem 3.5rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 9.2vw, 3.5rem) !important;
+    line-height: .86 !important;
+    margin: 2vh 0 3.5vh !important;
+    letter-spacing: -.03em !important;
+    padding: 0 1.25rem !important;
+  }
+
+  .hero h1 .hero-amp {
+    font-size: .38em !important;
+    line-height: .8 !important;
+    margin: 0.15rem 0 !important;
+  }
+
+  .hero-name--two {
+    font-size: 0.88em !important;
+    letter-spacing: -.035em !important;
+  }
+
+  .hero-meta {
+    gap: 1.2rem !important;
+    font-size: .68rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: clamp(1.85rem, 8.8vw, 2.35rem) !important;
+    letter-spacing: -.038em !important;
+    padding: 0 0.85rem !important;
+  }
+
+  .hero-name--two {
+    font-size: 0.86em !important;
+    letter-spacing: -.04em !important;
+  }
+}
+
+/* 3. Envelope Floral Ribbon Alignment & Centering on Mobile */
+@media (max-width: 640px) {
+  .envelope-stage {
+    width: min(390px, 92vw) !important;
+    aspect-ratio: 1.55 / 1 !important;
+  }
+
+  .envelope-flap {
+    height: 52% !important;
+  }
+
+  .envelope-florals {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 52% !important;
+    border-radius: 6px 6px 0 0 !important;
+    clip-path: polygon(0 0, 100% 0, 50% 100%) !important;
+    background: url('/images/invitation-florals.png') 50.8% top / 112% auto no-repeat !important;
+    background-size: 112% auto !important;
+    background-position: 50.8% top !important;
+    mix-blend-mode: multiply !important;
+    opacity: 0.94 !important;
+    filter: saturate(0.95) contrast(1.02) !important;
+    pointer-events: none !important;
+    transform: none !important;
+  }
+
+  .wax-seal {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) rotate(-2deg) !important;
+    width: 62px !important;
+    height: 62px !important;
+  }
+
+  .envelope-letter {
+    padding-top: clamp(1rem, 4vw, 1.6rem) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .envelope-stage {
+    width: 94vw !important;
+  }
+
+  .envelope-florals {
+    background-size: 114% auto !important;
+    background-position: 50.8% top !important;
+  }
+
+  .wax-seal {
+    width: 56px !important;
+    height: 56px !important;
+  }
+}
+
+/* 4. Single-line Profile Cue Pill */
+.profile-cue {
+  white-space: nowrap !important;
+  width: max-content !important;
+  max-width: 90% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: .35rem .95rem !important;
+  font-size: .62rem !important;
+  letter-spacing: .16em !important;
+  text-align: center !important;
+}
+
+/* 5. Music Player Icon & Text Single-Line Vertical Centering */
+.music {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 46px !important;
+}
+
+.music button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  padding: 0 0.95rem !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+}
+
+.music button:first-child {
+  min-width: 46px !important;
+  padding: 0 0.85rem !important;
+}
+
+.music button svg {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+}
+
+.music-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-left: 0.45rem !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  transform: translateY(0.5px) !important;
+}
+
+/* 6. Refined Lucide Icons & Typography Aesthetics */
+.button-arrow {
+  flex-shrink: 0;
+  transition: transform .25s ease;
+}
+
+.button:hover .button-arrow {
+  transform: translate(2px, -2px);
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin: 0;
+}
+
+.detail-icon {
+  color: var(--champagne);
+  flex-shrink: 0;
+}
+
+.transport-header {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .25rem;
+}
+
+.transport-icon {
+  color: var(--champagne);
+  flex-shrink: 0;
+}
+
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer-back-to-top:hover {
+  color: var(--champagne);
+}
+
+.confirmation-badge {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  animation: check .55s;
+}
+
+.faq-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  color: var(--champagne);
+  transition: transform .25s ease;
+}
+
+.faq article.is-open .faq-toggle-icon {
+  color: var(--burgundy);
+}
+
+/* 5. General Mobile UX Responsiveness Everywhere */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents auto-zoom in iOS Safari */
+  }
+
+  .detail-item {
+    grid-template-columns: 28px 1fr !important;
+    gap: .5rem 1rem !important;
+    padding: 1.25rem 0 !important;
+  }
+
+  .detail-item h3 {
+    font-size: 1.6rem !important;
+  }
+
+  .detail-item .detail-meta {
+    grid-column: 2 !important;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.4rem, 9vw, 3.8rem) !important;
+  }
+
+  .invitation h2 {
+    font-size: clamp(2.5rem, 8.5vw, 3.8rem) !important;
+  }
+
+  .invitation > div:last-child {
+    padding-left: 0 !important;
+  }
+
+  .closing-card h2 {
+    font-size: clamp(2.3rem, 8.5vw, 3.6rem) !important;
+  }
+
+  .countdown strong {
+    font-size: clamp(2.1rem, 7vw, 3.2rem) !important;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .dress h2 {
+    font-size: clamp(2.8rem, 11vw, 4.5rem) !important;
+  }
+}
+
+/* 6. Timeline Interactive Broken Map-Trail Animation */
+.timeline-line-track {
+  display: none !important; /* replaced by dynamic SVG map trail */
+}
+
+.timeline-map-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.timeline-map-guide {
+  fill: none;
+  stroke: rgba(48, 34, 30, .14);
+  stroke-width: 2.5;
+  stroke-dasharray: 4 6;
+  stroke-linecap: round;
+}
+
+.timeline-map-active-trail {
+  fill: none;
+  stroke: var(--burgundy);
+  stroke-width: 3.5;
+  stroke-dasharray: 8 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 2px 6px rgba(117, 31, 53, .3));
+  animation: mapTrailFlow .85s linear infinite;
+  transition: d .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes mapTrailFlow {
+  from {
+    stroke-dashoffset: 28;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.timeline-item.is-in-trail .timeline-dot {
+  background: var(--burgundy) !important;
+  border-color: #fff !important;
+  box-shadow: 0 0 0 3px rgba(117, 31, 53, .22), 0 0 8px rgba(199, 163, 106, .5) !important;
+}
+
+.timeline-item.is-trail-target .timeline-dot {
+  transform: scale(1.35) !important;
+  box-shadow: 0 0 0 4px rgba(117, 31, 53, .35), 0 0 14px rgba(199, 163, 106, .7) !important;
+}
+
+.timeline-compass-ring {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--burgundy);
+  animation: compassRotate 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes compassRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 7. Mobile Menu Close Button & Header */
+.mobile-menu-header {
+  position: absolute;
+  top: 1.5rem;
+  left: var(--gutter);
+  right: var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 360;
+}
+
+.mobile-menu-close {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.mobile-menu-close:hover,
+.mobile-menu-close:active {
+  background: rgba(255, 255, 255, .2);
+  transform: rotate(90deg);
+}
+
 
 
 

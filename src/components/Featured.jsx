@@ -19,7 +19,6 @@ export default function Featured() {
 
       <AnimatedReveal direction="zoom" delay={100} className="featured-reveal-wrap">
         <div className="featured-content">
-          <span className="featured-flourish" aria-hidden="true">✦ ❦ ✦</span>
           <p className="eyebrow featured-eyebrow">A Promise of Forever</p>
           <blockquote className="featured-quote">
             “And suddenly, all the love stories<br />we had ever heard made sense.”

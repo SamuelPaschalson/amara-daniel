@@ -1,3 +1,4 @@
+import { Plane, Car, ParkingCircle } from 'lucide-react';
 import { weddingData as d } from '../data/weddingData';
 import AnimatedReveal from './AnimatedReveal';
 import { Button, SectionHeading } from './UI';
@@ -52,15 +53,21 @@ export default function Travel() {
         <div className="transport">
           <h3>On the day</h3>
           {[
-            ['Airport transfers', 'Reserve ahead through your hotel concierge.'],
-            ['Taxis & ride-hailing', 'Ride-hailing availability can vary in Jos, so pre-booking is recommended.'],
-            ['Parking', 'Complimentary attended parking is available on-site.'],
-          ].map(x => (
-            <div key={x[0]}>
-              <strong>{x[0]}</strong>
-              <p>{x[1]}</p>
-            </div>
-          ))}
+            { title: 'Airport transfers', text: 'Reserve ahead through your hotel concierge.', icon: Plane },
+            { title: 'Taxis & ride-hailing', text: 'Ride-hailing availability can vary in Jos, so pre-booking is recommended.', icon: Car },
+            { title: 'Parking', text: 'Complimentary attended parking is available on-site.', icon: ParkingCircle },
+          ].map(x => {
+            const Icon = x.icon;
+            return (
+              <div key={x.title}>
+                <div className="transport-header">
+                  <Icon size={16} className="transport-icon" aria-hidden="true" />
+                  <strong>{x.title}</strong>
+                </div>
+                <p>{x.text}</p>
+              </div>
+            );
+          })}
         </div>
       </AnimatedReveal>
     </section>

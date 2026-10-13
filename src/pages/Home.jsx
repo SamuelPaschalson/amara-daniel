@@ -22,7 +22,6 @@ export default function Home() {
         <img className="invitation-wash" src={d.gallery[8].src} alt="" aria-hidden="true" />
         <AnimatedReveal direction="left" delay={50}>
           <div>
-            <span className="ornament">✣</span>
             <h2>Two lives.<br />One beautiful<br />beginning.</h2>
           </div>
         </AnimatedReveal>
@@ -61,7 +60,6 @@ export default function Home() {
 
         <AnimatedReveal direction="zoom" delay={100}>
           <div className="closing-card">
-            <span className="closing-ornament" aria-hidden="true">❦</span>
             <p className="eyebrow">One More Thing</p>
             <h2>Come for the vows.<br /><i>Stay for the dancing.</i></h2>
             <p className="closing-subtext">

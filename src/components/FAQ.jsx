@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Plus, Minus } from 'lucide-react';
 import { weddingData as d } from '../data/weddingData';
 import AnimatedReveal from './AnimatedReveal';
 import { SectionHeading } from './UI';
@@ -26,7 +27,9 @@ export default function FAQ() {
                 aria-controls={`faq-${i}`}
               >
                 <span>{q}</span>
-                <i>{open === i ? '−' : '+'}</i>
+                <i className="faq-toggle-icon">
+                  {open === i ? <Minus size={18} aria-hidden="true" /> : <Plus size={18} aria-hidden="true" />}
+                </i>
               </button>
               <div id={`faq-${i}`}>
                 <p>{a}</p>
@@ -38,4 +41,3 @@ export default function FAQ() {
     </section>
   );
 }
-

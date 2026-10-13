@@ -63,7 +63,7 @@ export const weddingData = {
         'A Facebook follow became an Instagram request.',
         'The request sparked a late-night conversation.',
         'The conversation turned into an invitation.',
-        'And she took a leap of faith and said yes. ❤️'
+        'And she took a leap of faith and said yes.'
       ],
       image: img(18),
       alt: 'Amanda and Nnanyelugo embracing with joyful laughter'
@@ -79,12 +79,13 @@ export const weddingData = {
         'Slowly and naturally, we became much more than a couple. We became best friends, each other’s deepest sounding board, and the safe harbour we could always count on.'
       ],
       image: img(4),
+      objectPosition: 'center 46%',
       alt: 'Amanda and Nnanyelugo laughing during their portrait session'
     },
     {
       num: '05',
       roman: 'V',
-      kicker: 'Chapter Five · The Proposal 💍',
+      kicker: 'Chapter Five · The Proposal',
       title: 'The Niece’s Party That Wasn’t',
       paragraphs: [
         'She was told they were heading out for an intimate family celebration for her niece. She arrived with smiles, gifts, and absolutely zero suspicions—completely unaware that he had spent weeks orchestrating the sweetest covert operation of his life.',
@@ -97,7 +98,7 @@ export const weddingData = {
     {
       num: '06',
       roman: 'VI',
-      kicker: 'Chapter Six · Us ❤️',
+      kicker: 'Chapter Six · Us',
       title: 'Behind The Stethoscopes',
       paragraphs: [
         'Beyond hospital wards and clinical scrubs, we are simply two best friends deeply in love with doing life together.',

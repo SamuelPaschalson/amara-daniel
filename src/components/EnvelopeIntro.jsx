@@ -45,7 +45,6 @@ export default function EnvelopeIntro({ onOpen, onStart }) {
       >
         <span className="envelope-letter">
           <span className="letter-florals" aria-hidden="true" />
-          <span className="letter-ornament" aria-hidden="true">✦</span>
           <span className="eyebrow">Together with their families</span>
           <strong>{d.couple.partnerOne} <i>&</i> {d.couple.partnerTwo}</strong>
           <small>{d.dateShort} · {d.location}</small>

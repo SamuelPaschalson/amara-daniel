@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ArrowDown } from 'lucide-react';
 import { weddingData as d } from '../data/weddingData';
 
 const HERO_SLIDES = [
@@ -46,9 +47,9 @@ export default function Hero() {
       <div className="hero-copy">
         <p className="eyebrow">Together with their families</p>
         <h1 id="hero-title">
-          <span>{d.couple.partnerOne}</span>
-          <i>&</i>
-          <span>{d.couple.partnerTwo}</span>
+          <span className="hero-name hero-name--one">{d.couple.partnerOne}</span>
+          <i className="hero-amp">&</i>
+          <span className="hero-name hero-name--two">{d.couple.partnerTwo}</span>
         </h1>
         <div className="hero-meta">
           <span>{d.dateShort}</span>
@@ -74,7 +75,7 @@ export default function Hero() {
           <span className="scroll-cue__wheel" />
         </span>
         <span className="scroll-cue__text">Scroll to discover</span>
-        <span className="scroll-cue__arrow" aria-hidden="true">↓</span>
+        <ArrowDown className="scroll-cue__arrow" size={13} aria-hidden="true" />
       </a>
     </section>
   );

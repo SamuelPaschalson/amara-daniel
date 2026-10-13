@@ -52,7 +52,6 @@ export default function Couple() {
 
                 <div className="profile-hover-card" aria-hidden={!isHovered}>
                   <div className="hover-card__header">
-                    <span className="hover-card__ornament">✦</span>
                     <span className="hover-card__role">{p.role}</span>
                   </div>
                   <h3 className="hover-card__title">{extra.title || p.name}</h3>
@@ -61,7 +60,7 @@ export default function Couple() {
                   {extra.tags && (
                     <div className="hover-card__tags">
                       {extra.tags.map(t => (
-                        <span key={t} className="hover-tag">✦ {t}</span>
+                        <span key={t} className="hover-tag">{t}</span>
                       ))}
                     </div>
                   )}
@@ -74,7 +73,7 @@ export default function Couple() {
                 </div>
 
                 <div className="profile-cue" aria-hidden="true">
-                  <span>Hover to discover</span>
+                  <span>Discover</span>
                 </div>
               </div>
 
