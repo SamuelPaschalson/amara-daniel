@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { weddingData as d } from '../data/weddingData';
 import Lightbox from './Lightbox';
 import { SectionHeading } from './UI';
@@ -29,7 +30,10 @@ export default function Gallery() {
             <div className="gallery-overlay" aria-hidden="true">
               <div className="gallery-card">
                 <span className="gallery-num">Portrait · {String(i + 1).padStart(2, '0')}</span>
-                <span className="gallery-action">View ↗</span>
+                <span className="gallery-action">
+                  <span>View</span>
+                  <ArrowUpRight size={13} aria-hidden="true" />
+                </span>
               </div>
             </div>
           </button>
