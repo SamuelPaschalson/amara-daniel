@@ -5,15 +5,15 @@ import { ImageWithFallback } from './UI';
 
 const PROFILE_DETAILS = {
   Amanda: {
-    title: 'Dr. Amanda',
+    title: 'Amanda',
     quote: '“He was worth every prayer.”',
-    tags: ['Physician', 'Sunday Laughter', 'Pure Sunshine'],
-    note: 'Radiant healer, lover of deep conversations, travel playlists, and joyful celebrations.'
+    tags: ['Pure Sunshine', 'Sunday Laughter', 'Warm Heart'],
+    note: 'Radiant soul, lover of deep conversations, travel playlists, and joyful celebrations.'
   },
   Nnanyelugo: {
-    title: 'Dr. Nnanyelugo',
+    title: 'Nnanyelugo',
     quote: '“I noticed her from the very start.”',
-    tags: ['Visionary Doctor', 'Chief Romantic', 'Steadfast Anchor'],
+    tags: ['Chief Romantic', 'Steadfast Anchor', 'Generous Heart'],
     note: 'Steadfast optimist, generous host, and the rock of our shared journey.'
   }
 };

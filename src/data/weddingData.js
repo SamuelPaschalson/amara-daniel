@@ -22,7 +22,7 @@ export const weddingData = {
   ],
   storyIntro: {
     eyebrow: 'Our Journey',
-    title: 'Two Doctors, One Island, Forever.',
+    title: 'Two Hearts, One Island, Forever.',
     body: 'Seven chapters of quiet glances, playful algorithms, fake birthday parties, and answered prayers.'
   },
   story: [
@@ -32,8 +32,8 @@ export const weddingData = {
       kicker: 'Chapter One · Two Lives, One Place',
       title: 'Two Lives, One Island',
       paragraphs: [
-        'Our story quietly began across the seas in the UK, where we were both deep in hospital corridors, surviving long NHS rotas, and pursuing our lifelong dreams as doctors.',
-        'Two completely separate lives, moving at full speed through clinics, on-call bleepers, and ward rounds—blissfully unaware that destiny was quietly orchestrating the moment our worlds would collide.'
+        'Our story quietly began across the seas in the UK, where we were both busy chasing our lifelong dreams as young doctors.',
+        'Two completely separate lives, two hearts moving at full speed—blissfully unaware that God was quietly writing the moment our worlds would collide, and the love that would follow.'
       ],
       image: img(3),
       alt: 'Amanda and Nnanyelugo sharing a warm, gentle smile'
@@ -45,7 +45,7 @@ export const weddingData = {
       title: 'The Silent Reconnaissance',
       paragraphs: [
         'Long before we ever officially met, exchanged a greeting, or shared a room, an eagle eye had already noticed her on Facebook.',
-        'Call it keen clinical observation or an undeniable spark from afar, but what began as an innocent glance would eventually evolve into an adventure neither of us could have ever anticipated.'
+        'Call it love at first scroll or an undeniable spark from afar, but what began as an innocent glance would blossom into a love neither of us could have ever imagined.'
       ],
       image: img(15),
       alt: 'Nnanyelugo looking thoughtfully sideways while holding Amanda’s hand'
@@ -75,7 +75,7 @@ export const weddingData = {
       title: 'Lattes, Banter & Nervous Smiles',
       paragraphs: [
         'Our first date was delightfully unassuming—a warm café corner, steaming cups, a few nervous smiles, and an effortless conversation that made hours slip away unnoticed.',
-        'One date quickly melted into another. Between demanding hospital rotations, spontaneous late-night calls, and unpredictable days, we became each other’s constant.',
+        'One date quickly melted into another. Between long days, spontaneous late-night calls, and sweet good-morning texts, we became each other’s constant.',
         'Slowly and naturally, we became much more than a couple. We became best friends, each other’s deepest sounding board, and the safe harbour we could always count on.'
       ],
       image: img(4),
@@ -99,9 +99,9 @@ export const weddingData = {
       num: '06',
       roman: 'VI',
       kicker: 'Chapter Six · Us',
-      title: 'Behind The Stethoscopes',
+      title: 'Simply, Us',
       paragraphs: [
-        'Beyond hospital wards and clinical scrubs, we are simply two best friends deeply in love with doing life together.',
+        'At the heart of it all, we are simply two best friends, deeply in love with doing life together.',
         'We love spending quality time together, spontaneous date nights, discovering new food spots, packing suitcases for new adventures, laughing until our stomachs hurt, and just reveling in each other’s company.',
         'We admire each other’s tender kindness, quiet strength, fierce ambition, and unwavering devotion to family.'
       ],
@@ -134,13 +134,13 @@ export const weddingData = {
     {
       name: 'Amanda',
       role: 'The Bride',
-      text: 'A physician with a radiant heart, lover of good books, travel, and quiet moments of joy. Her kindness, strength, and infectious smile bring light into every room.',
+      text: 'A radiant heart, lover of good books, travel, and quiet moments of joy. Her kindness, strength, and infectious smile bring light into every room.',
       image: img(6)
     },
     {
       name: 'Nnanyelugo',
       role: 'The Groom',
-      text: 'A dedicated doctor, eternal optimist, and thoughtful soul. He combines sharp ambition with deep devotion, always ready with an encouraging word and a warm embrace.',
+      text: 'An eternal optimist, hopeless romantic, and thoughtful soul. He combines sharp ambition with deep devotion, always ready with an encouraging word and a warm embrace.',
       image: img(7)
     }
   ],

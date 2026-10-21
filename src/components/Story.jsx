@@ -5,7 +5,7 @@ import { ImageWithFallback, SectionHeading } from './UI';
 export default function Story() {
   const intro = d.storyIntro || {
     eyebrow: 'Our Story',
-    title: 'Two Doctors, One Island, Forever.',
+    title: 'Two Hearts, One Island, Forever.',
     body: 'Seven chapters of quiet glances, playful algorithms, fake birthday parties, and answered prayers.'
   };
 

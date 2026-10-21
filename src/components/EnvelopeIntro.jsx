@@ -25,14 +25,27 @@ export default function EnvelopeIntro({ onOpen, onStart }) {
         aria-hidden="true"
       />
       <div className="envelope-intro__veil" />
+      <div className="envelope-frame" aria-hidden="true">
+        <span className="envelope-frame__corner envelope-frame__corner--tl" />
+        <span className="envelope-frame__corner envelope-frame__corner--tr" />
+        <span className="envelope-frame__corner envelope-frame__corner--bl" />
+        <span className="envelope-frame__corner envelope-frame__corner--br" />
+      </div>
+      <span className="envelope-bloom envelope-bloom--top" aria-hidden="true" />
+      <span className="envelope-bloom envelope-bloom--bottom" aria-hidden="true" />
+      <div className="envelope-sparkles" aria-hidden="true">
+        {Array.from({ length: 14 }, (_, i) => <i key={i} style={{ '--i': i }} />)}
+      </div>
 
       <header className="envelope-intro__header">
-        <p className="envelope-overline">The wedding celebration of</p>
+        <p className="envelope-overline">You are warmly invited to</p>
+        <p className="envelope-overline envelope-overline--sub">the wedding celebration of</p>
         <p className="envelope-script">
           <span>{d.couple.partnerOne}</span>
           <i>&</i>
           <span>{d.couple.partnerTwo}</span>
         </p>
+        <span className="envelope-divider" aria-hidden="true"><i /><b>♥</b><i /></span>
         <p className="eyebrow">{d.day} · {d.date} · {d.location}</p>
       </header>
 
@@ -63,6 +76,7 @@ export default function EnvelopeIntro({ onOpen, onStart }) {
           <strong>For our cherished guest</strong>
           <small>From {d.couple.partnerOne} & {d.couple.partnerTwo}</small>
         </span>
+        <span className="wax-seal-ring" aria-hidden="true" />
         <span className="wax-seal">
           <span>{d.couple.partnerOne[0]}</span>
           <i>&</i>
@@ -71,7 +85,9 @@ export default function EnvelopeIntro({ onOpen, onStart }) {
       </button>
 
       <footer className="envelope-intro__footer">
-        <p>{opening ? 'Opening your invitation…' : 'Tap the seal to open'}</p>
+        <p className="envelope-tap">
+          {opening ? 'Opening your invitation…' : <><span className="envelope-tap__hand" aria-hidden="true">✦</span> Tap the seal to open your invitation</>}
+        </p>
         <div className="day-colors" aria-label="Colors of the day">
           {d.dressColors.map(([name, color]) => (
             <span key={name} title={name} style={{ background: color }} />

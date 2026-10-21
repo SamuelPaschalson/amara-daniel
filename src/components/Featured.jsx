@@ -21,10 +21,10 @@ export default function Featured() {
         <div className="featured-content">
           <p className="eyebrow featured-eyebrow">A Promise of Forever</p>
           <blockquote className="featured-quote">
-            “And suddenly, all the love stories<br />we had ever heard made sense.”
+            “And suddenly, all the love stories,<br /> we had ever heard made sense.”
           </blockquote>
           <p className="featured-lede">
-            Two doctors, one serendipitous journey, and a lifetime of shared laughter.<br className="featured-br" />
+            Two hearts, one serendipitous journey, and a lifetime of shared laughter.<br className="featured-br" />
             We cannot wait to celebrate this milestone with you.
           </p>
 

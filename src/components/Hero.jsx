@@ -74,7 +74,10 @@ export default function Hero() {
         <span className="scroll-cue__mouse" aria-hidden="true">
           <span className="scroll-cue__wheel" />
         </span>
-        <span className="scroll-cue__text">Scroll to discover</span>
+        <span className="scroll-cue__text">
+          <span className="scroll-cue__label--touch">Swipe up to begin</span>
+          <span className="scroll-cue__label--mouse">Scroll to discover</span>
+        </span>
         <ArrowDown className="scroll-cue__arrow" size={13} aria-hidden="true" />
       </a>
     </section>
