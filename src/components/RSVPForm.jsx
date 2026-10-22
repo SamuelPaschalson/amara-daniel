@@ -1,32 +1,35 @@
 import { useState } from 'react';
 import { Check, ArrowUpRight } from 'lucide-react';
-import { submitRSVP } from '../services/rsvpService';
+import { useRsvpService } from '../features/rsvp/RsvpServiceProvider';
+import { rsvpForm } from '../data/weddingData';
 import { Button } from './UI';
 
 const initial = {
-  name: '',
+  fullName: '',
+  attendance: 'attending',
+  guestOf: '',
+  part: 'Both',
+  phone: '',
   email: '',
-  attendance: 'accepts',
-  guests: '1',
-  guestNames: '',
-  meal: 'Standard',
-  dietary: '',
-  message: ''
+  messageToCouple: ''
 };
 
 export default function RSVPForm() {
+  const service = useRsvpService();
   const [form, setForm] = useState(initial);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
 
   const change = e => setForm({ ...form, [e.target.name]: e.target.value });
+  const attending = form.attendance === 'attending';
 
   const validate = () => {
     const e = {};
-    if (form.name.trim().length < 2) e.name = 'Please enter your full name.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Please enter a valid email.';
-    if (form.attendance === 'accepts' && (+form.guests < 1 || +form.guests > 6)) e.guests = 'Guest count must be between 1 and 6.';
+    if (form.fullName.trim().length < 2) e.fullName = 'Please enter your name.';
+    if (!form.guestOf) e.guestOf = 'Please tell us whose guest you are.';
+    if (form.phone.replace(/\D/g, '').length < 7) e.phone = 'Please enter a valid WhatsApp number.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email)) e.email = 'Please enter a valid email.';
     return e;
   };
 
@@ -38,7 +41,11 @@ export default function RSVPForm() {
     setStatus('loading');
     setError('');
     try {
-      await submitRSVP(form);
+      await service.submit({
+        ...form,
+        part: attending ? form.part : '',
+        submittedAt: new Date().toISOString()
+      });
       setStatus('success');
     } catch (err) {
       setError(err.message);
@@ -53,8 +60,12 @@ export default function RSVPForm() {
           <Check size={32} aria-hidden="true" />
         </span>
         <p className="eyebrow">RSVP received</p>
-        <h2>Thank you, {form.name.split(' ')[0]}.</h2>
-        <p>Your RSVP has been received.<br />We cannot wait to celebrate with you.</p>
+        <h2>Thank you, {form.fullName.trim().split(' ')[0]}.</h2>
+        <p>
+          {attending
+            ? <>Your RSVP has been received.<br />We cannot wait to celebrate with you.</>
+            : <>Your reply has been received.<br />You will be missed, and we are grateful you let us know.</>}
+        </p>
         <Button to="/">Return to the celebration</Button>
       </div>
     );
@@ -63,99 +74,114 @@ export default function RSVPForm() {
   return (
     <form className="rsvp-form" onSubmit={submit} noValidate>
       <div className="field">
-        <label htmlFor="name">Full name</label>
+        <label htmlFor="fullName">Your name</label>
         <input
-          id="name"
-          name="name"
-          value={form.name}
+          id="fullName"
+          name="fullName"
+          value={form.fullName}
           onChange={change}
           autoComplete="name"
-          aria-invalid={!!errors.name}
+          aria-invalid={!!errors.fullName}
         />
-        {errors.name && <small>{errors.name}</small>}
-      </div>
-
-      <div className="field">
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          value={form.email}
-          onChange={change}
-          autoComplete="email"
-          aria-invalid={!!errors.email}
-        />
-        {errors.email && <small>{errors.email}</small>}
+        {errors.fullName && <small>{errors.fullName}</small>}
       </div>
 
       <fieldset>
-        <legend>Will you be joining us?</legend>
+        <legend>Can you attend?</legend>
         <label className="radio">
           <input
             type="radio"
             name="attendance"
-            value="accepts"
-            checked={form.attendance === 'accepts'}
+            value="attending"
+            checked={attending}
             onChange={change}
           />
-          <span>Joyfully accepts</span>
+          <span>{rsvpForm.attendingOptions.yes}</span>
         </label>
         <label className="radio">
           <input
             type="radio"
             name="attendance"
-            value="declines"
-            checked={form.attendance === 'declines'}
+            value="declined"
+            checked={!attending}
             onChange={change}
           />
-          <span>Regretfully declines</span>
+          <span>{rsvpForm.attendingOptions.no}</span>
         </label>
       </fieldset>
 
-      {form.attendance === 'accepts' && (
-        <>
-          <div className="form-row">
-            <div className="field">
-              <label htmlFor="guests">Number of guests</label>
-              <select id="guests" name="guests" value={form.guests} onChange={change}>
-                {[1, 2, 3, 4, 5, 6].map(n => <option key={n}>{n}</option>)}
-              </select>
-              {errors.guests && <small>{errors.guests}</small>}
-            </div>
-            <div className="field">
-              <label htmlFor="meal">Meal preference</label>
-              <select id="meal" name="meal" value={form.meal} onChange={change}>
-                {['Standard', 'Vegetarian', 'Vegan', 'Other'].map(x => <option key={x}>{x}</option>)}
-              </select>
-            </div>
-          </div>
-          <div className="field">
-            <label htmlFor="guestNames">Guest names</label>
-            <input
-              id="guestNames"
-              name="guestNames"
-              value={form.guestNames}
-              onChange={change}
-              placeholder="As shown on their invitation"
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="dietary">Dietary restrictions</label>
-            <input
-              id="dietary"
-              name="dietary"
-              value={form.dietary}
-              onChange={change}
-              placeholder="Allergies or requirements"
-            />
-          </div>
-        </>
+      <div className="field">
+        <label htmlFor="guestOf">Whose guest are you</label>
+        <select
+          id="guestOf"
+          name="guestOf"
+          value={form.guestOf}
+          onChange={change}
+          aria-invalid={!!errors.guestOf}
+        >
+          <option value="" disabled>Select one</option>
+          {rsvpForm.guestOfOptions.map(x => <option key={x}>{x}</option>)}
+        </select>
+        {errors.guestOf && <small>{errors.guestOf}</small>}
+      </div>
+
+      {attending && (
+        <fieldset>
+          <legend>Which part would you be attending?</legend>
+          {rsvpForm.partOptions.map(x => (
+            <label className="radio" key={x}>
+              <input
+                type="radio"
+                name="part"
+                value={x}
+                checked={form.part === x}
+                onChange={change}
+              />
+              <span>{x}</span>
+            </label>
+          ))}
+        </fieldset>
       )}
 
+      <div className="form-row">
+        <div className="field">
+          <label htmlFor="phone">Whatsapp number</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            value={form.phone}
+            onChange={change}
+            autoComplete="tel"
+            aria-invalid={!!errors.phone}
+          />
+          {errors.phone && <small>{errors.phone}</small>}
+        </div>
+        <div className="field">
+          <label htmlFor="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={change}
+            autoComplete="email"
+            aria-invalid={!!errors.email}
+          />
+          {errors.email && <small>{errors.email}</small>}
+        </div>
+      </div>
+
       <div className="field">
-        <label htmlFor="message">A note for us</label>
-        <textarea id="message" name="message" rows="4" value={form.message} onChange={change} />
+        <label htmlFor="messageToCouple">Comments</label>
+        <textarea
+          id="messageToCouple"
+          name="messageToCouple"
+          rows="4"
+          value={form.messageToCouple}
+          onChange={change}
+        />
       </div>
 
       {error && <p className="form-error" role="alert">{error}</p>}

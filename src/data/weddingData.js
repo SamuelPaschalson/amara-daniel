@@ -185,3 +185,38 @@ export const weddingData = {
     ['Who can I contact for questions?', 'Feel free to reach out to our wedding planning team or leave a message through the guestbook!']
   ]
 };
+
+/* -------------------------------------------------------------------------- */
+/*  RSVP – Google Form definition                                              */
+/*  The `entry.<id>` names and option labels come from the couple's pre-filled */
+/*  link. Option labels must match the live form character for character:      */
+/*  Google silently discards a value it does not recognise.                    */
+/* -------------------------------------------------------------------------- */
+
+export const rsvpForm = {
+  action:
+    'https://docs.google.com/forms/d/e/1FAIpQLSdCu4dltpPxr_LnkS3DawqKFA7xQrIv5LIF4cvU4f3QxfJGYA/formResponse',
+  fields: {
+    name: 'entry.182030970',
+    attending: 'entry.1094366511',
+    guestOf: 'entry.1131701387',
+    part: 'entry.1780475687',
+    phone: 'entry.365658368',
+    email: 'entry.781503251',
+    comments: 'entry.1701480605',
+  },
+  attendingOptions: { yes: 'Yes', no: 'No' },
+  guestOfOptions: [
+    "Bride's family",
+    "Groom's family",
+    "Bride's friends",
+    "Groom's friends",
+    'Bridesmaids',
+    'Groomsmen',
+    "Bride's family friends",
+    "Groom's family friends",
+    "Bride's Colleague",
+    "Groom's Colleague",
+  ],
+  partOptions: ['Both', 'Church', 'Reception'],
+};

@@ -85,3 +85,27 @@ The colors of the day—burgundy, champagne gold, and rose gold—are defined in
 After the guest opens the invitation, the open state is saved in `sessionStorage`. Client-side navigation between the home, RSVP, guestbook, and section links will not replay the envelope. Closing the browser tab ends the session, so a future visit can begin with the invitation again.
 
 The navigation and music controls are mounted at the application root and remain fixed to the viewport across every route.
+
+
+## RSVP
+
+Same pattern as the nk-osita site. A guest submits the form on `/rsvp`; the
+response is written into the couple's Google Form (and its responses sheet).
+
+Order of delivery, first success wins:
+
+1. `POST /api/rsvp` (`api/rsvp.js`, a Vercel/Node serverless function) writes to
+   the Google Form server-side, so a rejection is visible and never reported as
+   success.
+2. Direct browser `no-cors` post to the Google Form (used on static hosts and
+   in `vite dev`, where `/api/rsvp` does not exist).
+3. `localStorage` (`amanda-nnanyelugo-rsvps`) as a last resort.
+
+The form id, `entry.<id>` mapping and dropdown options live in `rsvpForm` in
+`src/data/weddingData.js`. Option labels must match the live form exactly.
+`api/rsvp.js` reads overrides from `GOOGLE_FORM_ID` and `GOOGLE_FORM_ENTRY_*`
+environment variables.
+
+In the Google Form, set Settings > Responses > "Collect email addresses" to
+"Responder input" (not "Verified"), and turn off "Limit to 1 response", or
+Google answers 401.
